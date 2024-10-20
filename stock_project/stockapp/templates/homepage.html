@@ -1,0 +1,47 @@
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-green-500">
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Welcome to the Stock App</h1>
+        <p class="mb-4">
+        <a href="#" id="fetch-btn" class="inline-block py-2 px-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-200">
+            Fetch and Store Stock Data
+        </a>
+    </p>
+    
+    <!-- Div to display the response from the server -->
+    <div id="response-message"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#fetch-btn').on('click', function(event) {
+                event.preventDefault();  // Prevent the default link behavior
+
+                // Send the AJAX request to the fetch_and_store view
+                $.ajax({
+                    url: "{% url 'fetch_and_store' %}",
+                    type: 'GET',
+                    success: function(response) {
+                        // Display the response message in the div
+                        $('#response-message').html('<p>' + response + '</p>');
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors
+                        $('#response-message').html('<p>Error fetching data. Please try again.</p>');
+                    }
+                });
+            });
+        });
+    </script>
+        <p class="mb-4">
+            <a href="{% url 'stock_data_list' %}" class="inline-block py-2 px-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-200">View Stock Data</a>
+        </p>
+        <p class="mb-4">
+            <a href="{% url 'predict_prices' %}?symbol=AAPL" class="inline-block py-2 px-4 bg-yellow-600 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-700 transition duration-200">Predict</a>
+        </p>
+        <p class="mb-4">
+            <a href="{% url 'backtest' %}" class="inline-block py-2 px-4 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-200">Backtest</a>
+        </p>
+    </div>
+</div>
