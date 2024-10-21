@@ -24,7 +24,7 @@
                     type: 'GET',
                     success: function(response) {
                         // Display the response message in the div
-                        $('#response-message').html('<p>' + response + '</p>');
+                        $('#response-message').html('<p>' + response + '</p><br>');
                     },
                     error: function(xhr, status, error) {
                         // Handle errors
@@ -38,10 +38,10 @@
             <a href="{% url 'stock_data_list' %}" class="inline-block py-2 px-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-200">View Stock Data</a>
         </p>
         <p class="mb-4">
-            <a href="{% url 'predict_prices' %}?symbol=AAPL" class="inline-block py-2 px-4 bg-yellow-600 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-700 transition duration-200">Predict</a>
+            <a href="{% url 'backtest' %}" class="inline-block py-2 px-4 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-200">Backtest Module</a>
         </p>
         <p class="mb-4">
-            <a href="{% url 'backtest' %}" class="inline-block py-2 px-4 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-200">Backtest</a>
+            <a href="{% url 'predict_prices' %}?symbol=AAPL" class="inline-block py-2 px-4 bg-yellow-600 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-700 transition duration-200">Predict and Generate Reports for next 30 days</a>
         </p>
     </div>
 </div>
