@@ -61,6 +61,7 @@ Follow these steps to get the project up and running on your local machine:
 ### Prerequisites
 
 - **Python 3.10 or later**: Ensure Python is installed on your system.
+- **pgAdmin 4**: To store and run the database.
 - **Virtual Environment**: It's recommended to use a virtual environment for isolating dependencies.
 
 ### Steps
