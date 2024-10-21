@@ -6,6 +6,7 @@ This project is a stock price prediction system that allows users to view predic
 
 - **Stock Price Prediction**: Predict future stock prices for a given symbol.
 - **Performance Report**: Generate a PDF report with a comparison between actual and predicted stock prices along with a plot image.
+- **Backtesting Module**: Evaluate the prediction model's performance against historical data.
 - **Interactive UI**: Users can view predicted stock prices and generate reports directly from the web interface.
 
 ## Table of Contents
@@ -15,6 +16,7 @@ This project is a stock price prediction system that allows users to view predic
 - [Installation](#installation)
 - [Usage](#usage)
 - [Generating Reports](#generating-reports)
+- [Backtesting Module](#backtesting-module)
 - [Contributing](#contributing)
 
 ## Tech Stack
@@ -39,13 +41,13 @@ stock_project/
 │   │           └── styles.css         # Custom styles for the frontend
 │   ├── templates/
 │   │   └── stockapp/
-│   │       ├── base.html              # Base template
+│   │       ├── backtest.html              # Base template
 │   │       ├── predict.html           # Page for predictions and report generation
 │   ├── models.py                      # Django models for stock data
 │   ├── views.py                       # Main view functions
 │   ├── urls.py                        # URL routing
 │   ├── utils.py                       # Utility functions (data parsing, report generation, etc.)
-│   └── ...
+│   └── predict.py
 │
 ├── media/
 │   └── reports/                       # Generated reports (PDF and images)
@@ -125,12 +127,21 @@ The project generates reports using Matplotlib for plots and ReportLab for PDF g
 2. Click "Generate Report".
 3. The system generates a downloadable PDF and plot file, displaying the links on the page.
 
+## Backtesting Module
+
+The backtesting module allows users to evaluate the effectiveness of the prediction model by comparing predicted prices with actual historical data.
+
+### Steps to use the backtesting module:
+1. Access the backtesting interface from the main menu.
+2. Enter the stock symbol and date range for the historical data.
+3. The system will display the backtesting results, including metrics such as accuracy and performance graphs.
+
 ## Contributing
 
 Contributions are welcome! Here's how you can help:
+
 1. Fork the project.
 2. Create a new branch (`git checkout -b feature-branch`).
 3. Make your changes and commit (`git commit -m 'Added a new feature'`).
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a Pull Request.
-
