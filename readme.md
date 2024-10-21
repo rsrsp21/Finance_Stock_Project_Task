@@ -60,14 +60,14 @@ Follow these steps to get the project up and running on your local machine:
 
 ### Prerequisites
 
-- **Python 3.x**: Ensure Python is installed on your system.
+- **Python 3.10 or later**: Ensure Python is installed on your system.
 - **Virtual Environment**: It's recommended to use a virtual environment for isolating dependencies.
 
 ### Steps
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/rsrsp21/stock_project.git
+    git clone https://github.com/rsrsp21/Finance_Stock_Project_Task_Blockhouse.git
     cd stock_project
     ```
 
@@ -101,7 +101,7 @@ Follow these steps to get the project up and running on your local machine:
     python manage.py runserver
     ```
 
-7. **Access the application**: Open your browser and go to `http://127.0.0.1:8000/` to view the stock prediction page.
+7. **Access the application**: Open your browser and go to `http://127.0.0.1:8000/stockapp` to view the stock prediction page.
 
 ## Usage
 
