@@ -145,3 +145,5 @@ Contributions are welcome! Here's how you can help:
 3. Make your changes and commit (`git commit -m 'Added a new feature'`).
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a Pull Request.
+
+**This project was completed as part of an internship recruitment at Blockhouse.**
